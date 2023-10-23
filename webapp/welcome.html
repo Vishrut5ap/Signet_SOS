@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<title>SOS</title>
+	<script type="text/javascript" src="./initStore.js">
+	</script>
+	<script id="sap-ui-bootstrap" src="resources/sap-ui-core.js"  data-sap-ui-theme="sap_belize" 
+		data-sap-ui-libs="sap.m"  data-sap-ui-compatVersion="edge"  data-sap-ui-preload="async" 
+		data-sap-ui-xx-bindingSyntax="complex"  data-sap-ui-resourceroots='{"zsos": "./"}'>
+</script>
+	<script>
+		jQuery.sap.require("sap.m.MessageBox");
+		jQuery.sap.require("jquery.sap.storage");
+		sap.ui.getCore().attachInit(function () {
+
+
+
+			var oUser, sStore, sUser, sPath, sCenter;
+
+			if (!sStore) {
+				sStore = jQuery.sap.getUriParameters().get("store");
+			}
+			if (!sStore) {
+				sStore = sessionStorage.getItem("store");
+				var oStorage = jQuery.sap.storage(jQuery.sap.storage.Type.local);
+				oStorage.put("storeNumber", { store: sStore });
+				// sessionStorage.clear();
+			}
+			if (!sStore) {
+				var that = this;
+				sap.m.MessageBox.error(
+					"Invalid Store!",
+					{
+						action: [sap.m.MessageBox.Action.CLOSE],
+						styleClass: "sapUiSizeCompact",
+						onClose: function (sAction) {
+							// that.getView().byId("rootPage").destroy();
+						}
+					}
+				);
+			}
+
+			if (!sUser) {
+				sUser = "Store User"; //jQuery.sap.getUriParameters().get("user");
+				this.bIsStoreApp = true;
+			}
+			if (sUser) {
+				if (this.bIsStoreApp) {
+					sUser = "SOS_USER";
+				}
+
+				//Start of change by Ashim Anam
+				if (!sCenter) {
+					sCenter = jQuery.sap.getUriParameters().get("supportcenter");
+				}
+				if (!sCenter) {
+					sCenter = sessionStorage.getItem("supportcenter");
+					var oStorage = jQuery.sap.storage(jQuery.sap.storage.Type.local);
+					oStorage.put("supportCenter", { scenter: sCenter });
+					// sessionStorage.clear();
+				}
+				if (!sCenter) {
+					var that = this;
+					sap.m.MessageBox.error(
+						"Invalid Support Center!",
+						{
+							action: [sap.m.MessageBox.Action.CLOSE],
+							styleClass: "sapUiSizeCompact",
+							onClose: function (sAction) {
+								// that.getView().byId("rootPage").destroy();
+							}
+						}
+					);
+				}
+				//End of change by Ashim Anam   
+				 
+				sPath = "/UserDetailsSet(Bname='" + sUser + "',Werks='" + atob(sStore) + "')";
+				if (sUser === "DEFAULT_USER") {
+					sPath = "/UserDetailsSet(Bname='SBASU',Werks='" + sStore + "')";
+				}
+				var oFavCartModel = new sap.ui.model.odata.v2.ODataModel("/sap/opu/odata/sap/ZFIAP_SOS_FAV_CART_SRV");
+				oFavCartModel.setHeaders({
+            'X-Requested-With': 'X'
+        });
+				oFavCartModel.read(sPath, {
+					success: jQuery.proxy(function (oData, oResponse) {
+						new sap.ui.core.ComponentContainer({
+							name: "zsos"
+						}).placeAt("content");
+						//    })
+						// this.getView().setBusy(false);
+					}, this),
+					error: jQuery.proxy(function (oData, oResponse) {
+						var that = this;
+						sap.m.MessageBox.error(
+							"An error Occured. Please check user settings with system administrators!",
+							{
+								action: [sap.m.MessageBox.Action.CLOSE],
+								styleClass: "sapUiSizeCompact",
+								onClose: function (sAction) {
+									//that.getView().byId("rootPage").destroy();
+								}
+							}
+						);
+					}, this)
+				});
+			}
+
+
+
+
+		});
+	</script>
+</head>
+
+<body class="sapUiBody" id="content">
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<!--<RatingIndicator value="{= ${Price} > 500 ? 1:1}"></RatingIndicator>-->
+	
+		<VBox>
+		<StepInput
+			value="{bdmng}"
+			displayValuePrecision="{displayValuePrecision}"
+			min="{
+			path: 'minbm',
+			formatter: '.valueFormat'
+			}"
+			max="{
+			path: 'bstma',
+			formatter: '.valueFormat'
+			}"
+			width="100px"
+			step="{step}"
+			largerStep="5"
+				
+			
+			change="onChangeBdmng"/>
+		<!--<Input value="{bdmng}" stepMode="{stepMode}" change="onChangeBdmng"/>-->
+		
+			<!--valueState="{valueState}"-->
+			<!--enabled="{enabled}"-->
+			<!--editable= "{editable}"	-->
+		<HBox>
+			<Text text="Min : {
+			path: 'minbm',
+			formatter: '.valueFormat'
+			}"
+			id="minbm" class="maxMin"/>
+			<Text text=" "/>
+			<Label text=" " class="maxMin" width="5px"/>
+			<Text text="Max : {
+			path: 'bstma',
+			formatter: '.valueFormat'
+			}"
+			id="bstma" class="maxMin"/>
+<!--// Start of change to Add Unit of measure			-->
+	 	 <Label text=" " class="maxMin" width="4px"/>
+			<Text text="{path:'meins'}" class="maxMin" />
+<!--// End of change to Add Unit of measure			-->
+		</HBox>
+	</VBox>
+	<!--Item Total-->
+	<Text text="{
+				parts: ['sku_price', 'bdmng'], 
+				
+				formatter: '.itemtotal'
+				}"/>
+	<!--Delete Item					-->
+	<Button text="Delete" press="deleteItem"></Button>
+	
+	<!--<VBox>-->
+		
+	<!--<Button text="Add to cart" press="addCart"></Button>-->
+	<!--<core:Icon xmlns:core="sap.ui.core" src="{-->
+	<!--					path: 'FavInd',-->
+	<!--					formatter: '.iconDefine'-->
+	<!--				}" size="1.5em" id="icon0" hoverColor="orange" alt="Favorite" tooltip="Add to Favorite" press="addFavorite"/>-->
+	<!--<core:Icon xmlns:core="sap.ui.core" src="sap-icon://add-favorite" size="1.5em" id="icon0" hoverColor="orange" alt="Cart" tooltip="Cart"/>-->
+	<!--</VBox>-->
+	
+</core:FragmentDefinition>

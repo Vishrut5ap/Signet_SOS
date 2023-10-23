@@ -1,0 +1,42 @@
+{
+	"fileName": "id_1544794381602_98_propertyChange",
+	"fileType": "change",
+	"changeType": "propertyChange",
+	"moduleName": "",
+	"reference": "home.Component",
+	"packageName": "$TMP",
+	"content": {
+		"property": "visible",
+		"newValue": false
+	},
+	"selector": {
+		"id": "home::sap.suite.ui.generic.template.ListReport.view.ListReport::ZCDS_C_SOS_HOME_TP--template::Share",
+		"type": "sap.m.OverflowToolbarButton",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/home/changes/",
+	"projectId": "home",
+	"creation": "2018-12-14T13:33:26.859Z",
+	"originalLanguage": "EN",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.60.1",
+		"sourceChangeFileName": "",
+		"compositeCommand": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"validAppVersions": {
+		"creation": "1.0.0",
+		"from": "1.0.0",
+		"to": "1.0.0"
+	},
+	"jsOnly": false,
+	"variantReference": ""
+}

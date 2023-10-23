@@ -1,0 +1,42 @@
+{
+	"fileName": "id_1547822473121_105_propertyChange",
+	"fileType": "change",
+	"changeType": "propertyChange",
+	"moduleName": "",
+	"reference": "zsos.cart.Component",
+	"packageName": "$TMP",
+	"content": {
+		"property": "visible",
+		"newValue": false
+	},
+	"selector": {
+		"id": "zsos.cart::sap.suite.ui.generic.template.ListReport.view.ListReport::ZCDS_I_SOS_CART--addEntry",
+		"type": "sap.m.OverflowToolbarButton",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/zsos.cart/changes/",
+	"projectId": "zsos.cart",
+	"creation": "2019-01-18T14:41:20.176Z",
+	"originalLanguage": "EN",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.61.1",
+		"sourceChangeFileName": "",
+		"compositeCommand": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"validAppVersions": {
+		"creation": "1.0.0",
+		"from": "1.0.0",
+		"to": "1.0.0"
+	},
+	"jsOnly": false,
+	"variantReference": ""
+}

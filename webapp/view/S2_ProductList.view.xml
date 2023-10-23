@@ -1,0 +1,77 @@
+<core:View
+
+		xmlns:core="sap.ui.core"
+		xmlns="sap.uxap"
+		xmlns:layout="sap.ui.layout"
+		xmlns:m="sap.m"
+		xmlns:f="sap.ui.layout.form"
+		controllerName="sap.uxap.sample.HeaderContent.HeaderContent"
+		height="100%">
+	<ObjectPageHeaderContent>
+		<content>
+			<layout:VerticalLayout>
+				<m:ObjectStatus title="User ID" text="12345678"/>
+				<m:ObjectStatus title="Functional Area" text="Developement"/>
+				<m:ObjectStatus title="Cost Center" text="PI DFA GD Programs and Product"/>
+				<m:ObjectStatus title="Email" text="email@address.com"/>
+			</layout:VerticalLayout>
+		</content>
+	</ObjectPageHeaderContent>
+</core:View>
+
+
+<!--<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:c="kgo.olm.customcontrol" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:w="kgo.ca.lib.src.controls" controllerName="kgo.olm.controller.businesscontroller.MaintainOppertunity" displayBlock="true">
+	
+	<l:FixFlex minFlexSize="1">
+			<l:fixContent>
+			<FlexBox class="mainToolbar" fitContainer="true" wrap="Wrap">
+				<HBox class="hboxLeftContent crmMiddleVAlign" wrap="Wrap">
+					<HBox wrap="Wrap">
+						<Image src="https://warriortradingnews.com/wp-content/uploads/2018/06/dc33b5ba114f5e2f72860a92a7757585.png" width="140px" height="100px" id="image0"/>
+					<items/>
+					</HBox>
+				</HBox>
+				<HBox class="alertContent crmMiddleVAlign" wrap="Wrap">
+					<Label text="Supply Order System (SOS)" class="alertStaticText" wrapping="true"/>
+					<Link text="Store : XXXX" enabled="true" class="alertLinkText" press="onUpdCloseDate" wrapping="true"/>
+				</HBox>
+				<HBox class="rightContent crmMiddleVAlign" wrap="Wrap">
+					<HBox wrap="Wrap">
+						<Label text="Logged in as XYZ ABC QWERT" class="dateUpdate" wrapping="true"/>
+					</HBox>
+					<HBox class="statusBox" wrap="Wrap">
+						<Label text="Logout" class="oppStatusText" wrapping="true"/>
+					</HBox>
+				</HBox>
+			</FlexBox>
+			<core:ComponentContainer width="100%" name="as" component="kgo.olm.summaryHeader" propagateModel="true"/>
+		</l:fixContent>
+		
+		<l:flexContent>
+			<Page id="idPageRoot" showHeader="false" enableScrolling="true">
+				<Toolbar class="sapMTBCustom">
+					<Title text="Signet" id="txtId" ></Title>
+					<ToolbarSpacer></ToolbarSpacer>
+					</Toolbar>
+				<content>
+				    <IconTabBar id="bar0">
+				        <items>
+				            <IconTabFilter text="Orders" count="22" showAll="true" id="filter0">
+				                <content>
+				                    <List noDataText="No data" id="list0">
+				                        <items>
+				                            <StandardListItem title="List Item 1" id="item0"/>
+				                            <StandardListItem title="List Item 2" id="item1"/>
+				                            <StandardListItem title="List Item 3" id="item2"/></items>
+				                    </List>
+				                </content>
+				            </IconTabFilter>
+				            <IconTabFilter text="Open" count="10" icon="sap-icon://task" iconColor="Critical" id="filter1"/>
+				            <IconTabFilter text="Shipped" count="5" icon="sap-icon://shipping-status" iconColor="Positive" id="filter2"/></items>
+				    </IconTabBar>
+				</content>
+				</Page>
+		</l:flexContent>
+	</l:FixFlex>
+	
+	</mvc:View>-->

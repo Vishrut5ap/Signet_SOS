@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable">
+	<!--<FlexBox id="storeFlex" items="{path: 'RequestSummary>/ZCDS_ALV_SOS_SEARCH_REQ', parameters:{expand: 'to_CartStoreItm'}}" direction="Column">-->
+	<!--	<FlexBox id="storeFlex" items="CartStore{/ZCDS_C_SOS_CARTSTORE_CDS}" direction="Column">	-->
+		<Dialog id="dialog" resizable="true" draggable="true" title="SOS Requests Summary" contentWidth="40%" contentHeight="70%">
+			<endButton>
+			  <Button text="Cancel" press="handleClose" />
+			 </endButton>
+			<content>
+				<VBox>
+		<items>
+			<!--<Panel expandable="true" expanded="true" headerText="SOS Requests Summary">-->
+				<Table width="auto" items="{ path: 'RequestSummary>/ZCDS_ALV_SOS_SEARCH_REQ' }" noDataText="No Data Found"
+				growing="true" growingScrollToLoad="true" updateFinished="onUpdateFinished">
+					<columns>
+						<Column hAlign="Center">
+							<header>
+							<Text text="{i18n>location}" class="RequestSummaryDialogHeader" id="location"/>
+							</header>
+						</Column>
+						<Column hAlign="Center" demandPopin="true" >
+							<header>
+							<Text text="{i18n>ReqLineCount}" class="RequestSummaryDialogHeader" id="ReqLineCount"/>
+							</header>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<ObjectIdentifier
+								text="{RequestSummary>SOSStore}" />
+								<Text text="{RequestSummary>SOSReqLineCount}" />
+							</cells>	
+						</ColumnListItem>
+					</items>
+				</Table>
+			<!--</Panel>-->
+		</items>
+		</VBox>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>
+
+
+
+

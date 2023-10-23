@@ -1,0 +1,50 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZFIAP_SOS_FAV_CART_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="User" sap:content-version="1">
+				<Key><PropertyRef Name="Bname"/><PropertyRef Name="Werks"/></Key><Property Name="Bname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Site" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="UserToFav" Relationship="ZFIAP_SOS_FAV_CART_SRV.UserToFav" FromRole="FromRole_UserToFav" ToRole="ToRole_UserToFav"/><NavigationProperty Name="UserToCart" Relationship="ZFIAP_SOS_FAV_CART_SRV.UserToCart" FromRole="FromRole_UserToCart"
+					ToRole="ToRole_UserToCart"/></EntityType>
+			<EntityType Name="Favorite" sap:content-version="1">
+				<Key><PropertyRef Name="Bname"/><PropertyRef Name="Matnr"/><PropertyRef Name="Werks"/></Key><Property Name="Bname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Article" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Site" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CtlgItmKey" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Catalog item key" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CatItmHash" Type="Edm.String" Nullable="false" MaxLength="90" sap:unicode="false" sap:label="Catalog hash key"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Cart" sap:content-version="1">
+				<Key><PropertyRef Name="Bname"/><PropertyRef Name="Werks"/><PropertyRef Name="CartItmNo"/><PropertyRef Name="Matnr"/></Key><Property Name="Bname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Minbm" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Min. Order Qty"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Site" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bstma" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Max. Order Qty."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CartItmNo" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Cart Item" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Article" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SkuPrice" Type="Edm.Decimal" Nullable="false" Precision="12" Scale="3" sap:unicode="false" sap:label="SKU Price"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Createdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Created On" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TotalPrice" Type="Edm.Decimal" Nullable="false" Precision="24" Scale="5" sap:unicode="false" sap:label="TOTAL_PRICE"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Createtime" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Created at" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Bdmng" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:unit="Meins" sap:label="Requirement qty"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Meins" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Base Unit" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/></EntityType>
+			<EntityType Name="CartNote" sap:content-version="1">
+				<Key><PropertyRef Name="Bname"/></Key><Property Name="Bname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Notes" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:label="Notes" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="UserToCart" sap:content-version="1"><End Type="ZFIAP_SOS_FAV_CART_SRV.User" Multiplicity="1" Role="FromRole_UserToCart"/><End Type="ZFIAP_SOS_FAV_CART_SRV.Cart" Multiplicity="*" Role="ToRole_UserToCart"/></Association>
+			<Association Name="UserToFav" sap:content-version="1"><End Type="ZFIAP_SOS_FAV_CART_SRV.User" Multiplicity="1" Role="FromRole_UserToFav"/><End Type="ZFIAP_SOS_FAV_CART_SRV.Favorite" Multiplicity="*" Role="ToRole_UserToFav"/></Association>
+			<EntityContainer Name="ZFIAP_SOS_FAV_CART_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="UserSet" EntityType="ZFIAP_SOS_FAV_CART_SRV.User" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="FavoriteSet" EntityType="ZFIAP_SOS_FAV_CART_SRV.Favorite" sap:updatable="false" sap:pageable="false"
+				sap:content-version="1"/><EntitySet Name="CartSet" EntityType="ZFIAP_SOS_FAV_CART_SRV.Cart" sap:pageable="false" sap:content-version="1"/><EntitySet Name="CartNoteSet" EntityType="ZFIAP_SOS_FAV_CART_SRV.CartNote" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="UserToFavSet" Association="ZFIAP_SOS_FAV_CART_SRV.UserToFav" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="UserSet" Role="FromRole_UserToFav"/><End EntitySet="FavoriteSet" Role="ToRole_UserToFav"/></AssociationSet>
+				<AssociationSet Name="UserToCartset" Association="ZFIAP_SOS_FAV_CART_SRV.UserToCart" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="UserSet" Role="FromRole_UserToCart"/><End EntitySet="CartSet" Role="ToRole_UserToCart"/></AssociationSet>
+				<FunctionImport Name="AddStore" ReturnType="Collection(ZFIAP_SOS_FAV_CART_SRV.Cart)" EntitySet="CartSet" m:HttpMethod="POST"
+					sap:action-for="ZFIAP_SOS_FAV_CART_SRV.Cart"><Parameter Name="User" Type="Edm.String" Mode="In"/><Parameter Name="Store" Type="Edm.String" Mode="In"/></FunctionImport>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZFIAP_SOS_FAV_CART_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZFIAP_SOS_FAV_CART_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

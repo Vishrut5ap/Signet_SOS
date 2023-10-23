@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+<Column id="ExtensionWizard::ColumnBreakout">
+		<Text text="Quantity"/>
+		<customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "quantity","leadingProperty": ["bdmng", "minbm", "bstma"], "columnIndex" : "3"}'/>
+		</customData>
+	</Column>
+	<Column id="ExtensionWizard::ColumnBreakout1">
+		<Text text="Total"/>
+		<customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "itemTotal","leadingProperty": "sku_price", "columnIndex" : "5"}'/>
+		</customData>
+	</Column>
+	<Column id="ExtensionWizard::ColumnBreakout2">
+		<Text text="Action"/>
+		<customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "action", "columnIndex" : "6"}'/>
+		</customData>
+	</Column>
+</core:FragmentDefinition>

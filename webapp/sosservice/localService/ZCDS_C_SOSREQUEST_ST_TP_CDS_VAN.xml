@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='S4FIN')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='S4FIN')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='S4FIN')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference Uri="../../../sap/zcds_c_sosrequest_st_tp_cds/$metadata"><edmx:Include Namespace="ZCDS_C_SOSREQUEST_ST_TP_CDS" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema Namespace="zcds_c_sosrequest_st_tp_cds_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZCDS_C_SOSREQUEST_ST_TP_CDS.ZCDS_I_SOS_CARTType/Checkout_sos_ac"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Hidden"/><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="ZCDS_C_SOSREQUEST_ST_TP_CDS.ZCDS_I_SOS_CARTType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="matnr"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="TotalPrice"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="maktx"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="sku_price"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="werks"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="bdmng"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="meins"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="minbm"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="bstma"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="notes"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZCDS_C_SOSREQUEST_ST_TP_CDS.ZCDS_I_SOS_REQUEST_TPType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CatLogSKU"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CatlogUnit"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CatLogSkuPrice"/></Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="SOSFavorite">
+					<Record><PropertyValue Property="Text" String="Favorite"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="FavInd"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="0"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="SOSHotPick">
+					<Record><PropertyValue Property="Text" String="Hot Pick SOS Request"/>
+						<PropertyValue Property="SelectOptions">
+							<Collection>
+								<Record Type="UI.SelectOptionType"><PropertyValue Property="PropertyName" PropertyPath="CatLogSkuHotPick"/>
+									<PropertyValue Property="Ranges">
+										<Collection>
+											<Record Type="UI.SelectionRangeType"><PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/><PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/><PropertyValue Property="Low" String="Y"/></Record>
+										</Collection>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="SOSRegular">
+					<Record><PropertyValue Property="Text" String="Regular SOS Request"/></Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

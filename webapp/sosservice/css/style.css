@@ -1,0 +1,75 @@
+.textHeight {
+   height: 100px !important
+}
+.maxMin{
+	font-size: 10px !important
+	/*height: 10px !important*/
+}
+.stepFont{
+	font-size: 8px !important
+	/*height: 14px !important*/
+}
+.buttonHeight{
+	font-size: 8px !important
+	/*height: 20px !important;*/
+	/*padding: 0 */
+}
+.quantityColumn{
+	width: 100px !important
+}
+
+.skupriceColumn{
+	width: 150px !important
+}
+.headerPadding{
+	padding-top: 0.001rem !important
+}
+.headerText{
+	font-weight: bold !important;
+	/*background: #cae4fb !important*/
+}
+.HBoxStyle {
+  margin-top:5%;
+  /*margin-left: 5%;*/
+  margin-bottom:5%;
+}
+/*
+.sapFDynamicPageContentFitContainer{
+ padding: 1rem 0.5rem 0 1rem !important	
+}
+
+/*Start of changes by Ashim Anam on 10th Aug 2020
+.sapFDynamicPage-Std-Tablet{
+	 padding: 1rem 0.5rem 0 1rem !important	
+}
+End of change by Ashim Anam on 10th Aug 2020*/ 
+/*
+.sapFDynamicPageContent{
+	 padding: 1rem 0.5rem 0 1rem !important	
+}
+/*.sapFDynamicPageContentFitContainer .pagePadding{*/
+	/*padding-right: 0.001rem */
+/*	    padding: 1rem 0 0 0 !important*/
+/*}*/
+/*
+.sapFDynamicPageTitle .sapFDynamicPageTitleMain {
+display: none;
+}
+/*.sapFDynamicPageTitle{*/ 
+/*	display:none;*/
+/*}*/
+.hideTitle {
+	padding: 0px;
+	min-height:0px;
+}
+/*
+.sapFDynamicPage-Std-Phone .sapFDynamicPageTitleWrapper.sapFDynamicPageTitleSnapped>.sapFDynamicPageTitle {
+	    padding: 0 0 0rem 1rem;
+}
+*/
+.backOrder{
+	font-size: 10px !important;
+	color: blue !important;
+	font-weight: bold !important;
+}
+

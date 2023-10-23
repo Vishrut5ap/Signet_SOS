@@ -1,0 +1,46 @@
+.objSection {
+    font-weight:bold;
+}
+/*.sapUiSizeCompact .sapUxAPBlockContainerDesktop{*/
+/*	  padding: 1rem 1rem 0rem 2rem !important;*/
+/*}*/
+
+/*.sapUiSizeCompact {*/
+/*	padding: 5rem 0 0 0 !important*/
+/*}*/
+.sapUxAPBlockContainerTablet{
+	padding: 1rem 1rem 0rem 2rem !important
+}
+.sapUxAPBlockContainerDesktop{
+	padding: 1rem 1rem 0rem 2rem !important;
+}
+
+.headerText{
+	font-weight: bold !important;
+	/*background: #cae4fb !important*/
+}
+/*
+.sapFDynamicPageTitle .sapFDynamicPageTitleMain {
+display: none;
+}
+*/
+.hideTitle {
+	padding: 0px;
+	min-height:0px;
+}
+/*
+.sapFDynamicPage-Std-Phone .sapFDynamicPageTitleWrapper.sapFDynamicPageTitleSnapped>.sapFDynamicPageTitle {
+	    padding: 0 0 0rem 1rem;
+}
+
+.sapFDynamicPage-Std-Tablet .sapFDynamicPageTitle {
+    padding: 0rem 1rem 0rem 2rem;
+}
+*/
+.editButton {
+   right: 65px;
+}
+.closeButton {
+    /*left: 40px;*/
+    left: 20px;
+}

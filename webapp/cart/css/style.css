@@ -1,0 +1,14 @@
+.textHeight {
+   height: 100px !important
+}
+.maxMin{
+	font-size: 10px !important
+	/*height: 10px !important*/
+}
+.quantityColumn{
+	width: 100px !important
+}
+
+.skupriceColumn{
+	width: 150px !important
+}

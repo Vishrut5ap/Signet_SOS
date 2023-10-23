@@ -1,0 +1,81 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable">
+	<!--<RatingIndicator value="{= ${Price} > 500 ? 1:1}"></RatingIndicator>  entitySet="ZCDS_I_SOS_CARTSTOREITEM"  to_CartStoreItm  requestAtLeastFields="matnr,maktx,sku_price"-->
+	<FlexBox id="storeFlex" items="{path: 'CartStore>/ZCDS_C_SOS_CARTSTORE', parameters:{expand: 'to_CartStoreItm'}}" direction="Column">
+		<!--<FlexBox id="storeFlex" items="CartStore{/ZCDS_C_SOS_CARTSTORE_CDS}" direction="Column">	-->
+		<items>
+			<Panel expandable="true" expanded="true" 
+			headerText="{parts:[{path:'i18n>store'},{path:'CartStore>CartStore'}], formatter: '.formatStoreText'}">
+				<Table id="cartStores" width="auto" items="{ path: 'CartStore>to_CartStoreItm', sorter: { path: 'werks', descending: true }, templateShareable: true }"
+					noDataText="no cart item" growing="true" growingScrollToLoad="true" updateFinished="onUpdateFinished">
+					<columns>
+						<Column id="nameColumn">
+							<Text text="Article" id="articleHdr"/>
+						</Column>
+						<Column>
+							<Text text="Article description" id="artDescHdr"/>
+						</Column>
+						<Column>
+							<Text text="Quanitity" id="quantityHdr"/>
+						</Column>
+						<Column>
+							<Text text="SKU Price" id="SKUPriceHdr"/>
+						</Column>
+						<Column>
+							<Text text="Total" id="totalHdr"/>
+						</Column>
+						<Column>
+							<Text text="Action" id="actionHdr"/>
+						</Column>
+					</columns>
+					<!--<columns>
+						<Column id="nameColumn">
+							<Text text="Article"/>
+						</Column>
+						<Column>
+							<Text text="Article description"/>
+						</Column>
+						<Column>
+							<Text text="Quanitity"/>
+						</Column>
+						<Column>
+							<Text text="SKU Price"/>
+						</Column>
+						<Column>
+							<Text text="Total"/>
+						</Column>
+						<Column>
+							<Text text="Action"/>
+						</Column>
+					</columns>-->
+					<items>
+						<ColumnListItem>
+							<cells>
+								<ObjectIdentifier title="{CartStore>matnr}"/>
+								<Text text="{CartStore>maktx}"/>
+								<VBox>
+									<StepInput value="{CartStore>bdmng}" min="{ path: 'CartStore>minbm', formatter: '.valueFormat' }"
+										max="{ path: 'CartStore>bstma', formatter: '.valueFormat' }" width="100px" step="{step}" largerStep="5" change="onChangeBdmngChild"/>
+									<HBox>
+										<Text text="Min : { path: 'CartStore>minbm', formatter: '.valueFormat' }" id="minbm2" class="maxMin"/>
+										<Text text=" "/>
+										<Label text=" " class="maxMin" width="5px"/>
+										<Text text="Max : { path: 'CartStore>bstma', formatter: '.valueFormat' }" id="bstma2" class="maxMin"/>
+									</HBox>
+								</VBox>
+								<Text text="{CartStore>sku_price}"/>
+								<!--<Text text="{CartStore>total_price}"/>-->
+								<Text text="{ parts: ['CartStore>sku_price', 'CartStore>bdmng'], formatter: '.itemtotal' }"/>
+								<Button text="Delete" press="deleteItemChild"></Button>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+				
+				<TextArea placeholder="Input Notes" change="onChangeNotesChild"/>
+				<Text text="" width="31rem"/>
+				<Text text="Total Price: {CartStore>CartStoreTotalPrice}" />
+				<!--<Button text="3" type="Accept" />-->
+			</Panel>
+		</items>
+	</FlexBox>
+</core:FragmentDefinition>

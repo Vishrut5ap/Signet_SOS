@@ -1,0 +1,65 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns="sap.m">
+	
+	<Column id="ExtensionWizard::ColumnBreakout2" width="25rem">
+		<Text text="Article Description"/>
+		<customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "CatalogSKUDesc", "leadingProperty":["CatalogSKUDesc", "RequestNumber"], "columnIndex" : "3"}'/>
+		</customData>
+	</Column>
+	
+		<Column id="ExtensionWizard::ColumnBreakout1">
+		<Text text="Quantity"/>
+		<customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "Quantity", "leadingProperty":["CatLogMinOrd", "CatLogMaxOrd", "FavCartInd"], "columnIndex" : "4"}'/>
+		</customData>
+	</Column>
+	<Column id="ExtensionWizard::ColumnBreakout">
+		<Text text="Action"/>
+		<customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "Action", "leadingProperty":["FavCartInd", "CatLogSkuStore", "BackOrdIndicator", "InProgressIndi", "CatLogSkuHotPick", "CatlogUnit", "SourceIndi"], "columnIndex" : "100"}'/>
+		</customData>
+	</Column>
+<!--	<table:Column width="120px">
+		<Label text="Quantity"/>
+		<table:customData>
+			<core:CustomData key="p13nData"
+				value='\{"columnKey": "Quantity", "leadingProperty":["CatLogMinOrd", "CatLogMaxOrd", "FavCartInd"], "columnIndex" : "2"}'/>
+		</table:customData>
+		<table:template>
+			<VBox>
+				<StepInput value="{path: 'CatLogMinOrd', formatter: '.valueFormat'}" displayValuePrecision="{displayValuePrecision}"
+					min="{ path: 'CatLogMinOrd', formatter: '.valueFormat' }" max="{ path: 'CatLogMaxOrd', formatter: '.valueFormat' }" width="100px"
+					step="{step}" largerStep="5" editable="{path: 'FavCartInd', formatter: '.stepEditable'}" change="onChangeQuantity" class="stepFont"/>
+				
+				<HBox>
+					<Text text="Min : { path: 'CatLogMinOrd', formatter: '.valueFormat' }" id="CatLogMinOrd1" class="maxMin"/>
+					<Text text=" "/>
+					<Label text=" " class="maxMin" width="5px"/>
+					<Text text="Max : { path: 'CatLogMaxOrd', formatter: '.valueFormat' }" id="CatLogMaxOrd1" class="maxMin"/>
+				</HBox>
+			</VBox>
+		</table:template>
+	</table:Column>
+	<table:Column>
+		<Label text="Action"/>
+		<table:customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "Action", "leadingProperty":"FavCartInd", "columnIndex" : "100"}'/>
+		</table:customData>
+		<table:template>
+			<VBox>
+				
+				<Button text="{ path: 'FavCartInd', formatter: '.cartText' }" press="addCart" type="{path: 'FavCartInd', formatter: '.buttonType'}" class="buttonHeight"></Button>
+				<core:Icon xmlns:core="sap.ui.core" src="{ path: 'FavCartInd', formatter: '.iconDefine' }" size="1em" id="icon0" hoverColor="yellow"
+					alt="Favorite" tooltip="Add to Favorite" color="orange" press="addFavorite"/>
+				
+			</VBox>
+		</table:template>
+	</table:Column>-->
+	<!--<Column id="ExtensionWizard::ColumnBreakout2" width="0">-->
+	<!--visible="false"-->
+	<!--	<Text text="Action2"/>-->
+	<!--	<customData>-->
+	<!--		<core:CustomData key="p13nData" value='\{"columnKey": "Action2", "leadingProperty":"CartInd", "columnIndex" : "101"}'/>-->
+	<!--	</customData>-->
+	<!--   </Column>-->
+</core:FragmentDefinition>

@@ -1,0 +1,77 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://dldf20app00.irving.zalecorp.com:8001/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='S4FIN')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZCDS_C_SOS_REQUEST_FSC_TP_CDS" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZCDS_C_SOS_REQUEST_FSC_TPType" sap:label="Consumption View for SOS Req of FSC User" sap:content-version="1">
+				<Key><PropertyRef Name="bname"/></Key><Property Name="bname" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="User Name"/><NavigationProperty Name="to_SOSCart" Relationship="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.assoc_7A728034473AB54A03EE77A32D90F7F6"
+					FromRole="FromRole_assoc_7A728034473AB54A03EE77A32D90F7F6" ToRole="ToRole_assoc_7A728034473AB54A03EE77A32D90F7F6"/><NavigationProperty Name="to_SOSReqFSCUser" Relationship="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.assoc_320AF5D2A1E2E831938A49AA319A0DA8"
+					FromRole="FromRole_assoc_320AF5D2A1E2E831938A49AA319A0DA8" ToRole="ToRole_assoc_320AF5D2A1E2E831938A49AA319A0DA8"/><NavigationProperty Name="to_StoreUserFav" Relationship="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.assoc_27BA886FA7EB7E4884C14FE3DD47A8C8"
+					FromRole="FromRole_assoc_27BA886FA7EB7E4884C14FE3DD47A8C8" ToRole="ToRole_assoc_27BA886FA7EB7E4884C14FE3DD47A8C8"/></EntityType>
+			<EntityType Name="ZCDS_I_SOS_CARTType" sap:label="CDS for SOS Cart" sap:content-version="1">
+				<Key><PropertyRef Name="bname"/><PropertyRef Name="cart_itm_no"/><PropertyRef Name="matnr"/><PropertyRef Name="werks"/></Key><Property Name="Checkout_sos_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="bname" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="User Name"/><Property Name="cart_itm_no" Type="Edm.String" Nullable="false" MaxLength="5" sap:display-format="NonNegative" sap:label="Cart Item Number"/><Property Name="matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Article"
+					sap:quickinfo="Article Number"/><Property Name="werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Site"
+					sap:value-list="standard"/><Property Name="createdate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Created On"/><Property Name="createtime" Type="Edm.Time" Precision="0" sap:label="Created at"/><Property Name="bdmng" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Requirement Quantity"/><Property Name="meins" Type="Edm.String" MaxLength="3" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure"/><Property Name="maktx" Type="Edm.String" MaxLength="40" sap:label="Article description"/><Property Name="minbm" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Min. Order Qty" sap:quickinfo="Minimum Order Quantity"/><Property Name="bstma" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Max. Order Qty." sap:quickinfo="Maximum Order Quantity"/><Property Name="sku_price" Type="Edm.Decimal" Precision="12" Scale="3" sap:label="SKU Price"/><Property Name="total_price" Type="Edm.Decimal" Precision="14" Scale="3" sap:label="Subtotal"/><Property Name="notes" Type="Edm.String" MaxLength="200" sap:label="Notes" sap:quickinfo="SOS Notes"/><Property Name="TotalPrice" Type="Edm.Decimal" Precision="14" Scale="3"/><NavigationProperty Name="to_SKUStore" Relationship="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.assoc_6E7953DC111361A37ED53EFDD301F8D6"
+					FromRole="FromRole_assoc_6E7953DC111361A37ED53EFDD301F8D6" ToRole="ToRole_assoc_6E7953DC111361A37ED53EFDD301F8D6"/></EntityType>
+			<EntityType Name="ZCDS_I_SOS_FAVORITES_TPType" sap:label="CDS for SOS Request Favorites" sap:content-version="1">
+				<Key><PropertyRef Name="BNAME"/><PropertyRef Name="MATNR"/><PropertyRef Name="WERKS"/></Key><Property Name="BNAME" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="User Name"/><Property Name="MATNR" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Article"
+					sap:quickinfo="Article Number"/><Property Name="WERKS" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Site"/><Property Name="CTLG_ITM_KEY" Type="Edm.Int32" sap:label="Catalog item key" sap:quickinfo="Catalog Item Key"/><Property Name="CAT_ITM_HASH" Type="Edm.String" MaxLength="90" sap:display-format="UpperCase" sap:label="Catalog Hash Key"
+					sap:quickinfo="catalog hash item key"/></EntityType>
+			<EntityType Name="ZCDS_I_SOS_REQUEST_FSC_TPType" sap:label="CDS SOS Request for FSC users" sap:content-version="1">
+				<Key><PropertyRef Name="CatalogUser"/><PropertyRef Name="CatLogSKU"/><PropertyRef Name="CatlogSkuStore"/></Key><Property Name="CatalogUser" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase"/><Property Name="CatLogSKU" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Article"
+					sap:quickinfo="Article Number"/><Property Name="CatlogSkuStore" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Site"/><Property Name="CatalogSKUDesc" Type="Edm.String" MaxLength="40" sap:label="Article description"/><Property Name="CatLogItmKey" Type="Edm.Int32" sap:label="Catalog item key" sap:quickinfo="Catalog Item Key"/><Property Name="CatLogItmHash" Type="Edm.String" MaxLength="90" sap:display-format="UpperCase" sap:label="Catalog Hash Key"
+					sap:quickinfo="catalog hash item key"/><Property Name="CatLogMinOrd" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="CatlogUnit" sap:label="Min. Order Qty"
+					sap:quickinfo="Minimum Order Quantity"/><Property Name="CatLogMaxOrd" Type="Edm.Decimal" Precision="13" Scale="3" sap:unit="CatlogUnit" sap:label="Max. Order Qty."
+					sap:quickinfo="Maximum Order Quantity"/><Property Name="CatlogUnit" Type="Edm.String" MaxLength="3" sap:label="Base Unit of Measure" sap:semantics="unit-of-measure"/><Property Name="CatLogSkuPrice" Type="Edm.Decimal" Precision="13" Scale="2"/><Property Name="CatLogSkuHotPick" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Hot Pick Flag"/><Property Name="FavInd" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase"/><Property Name="CartInd" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase"/><Property Name="FavCartInd" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase"/><Property Name="GetUrl" Type="Edm.String" MaxLength="665" sap:display-format="UpperCase"/></EntityType>
+			<EntityType Name="ZCDS_I_SOS_SKU_STOREType" sap:label="Store with respect to Article" sap:content-version="1">
+				<Key><PropertyRef Name="SOSUser"/><PropertyRef Name="SOSStore"/><PropertyRef Name="SOSSKU"/></Key><Property Name="SOSUser" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="User Name"/><Property Name="SOSStore" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Site"/><Property Name="SOSSKU" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Article"
+					sap:quickinfo="Article Number"/><Property Name="StoreName" Type="Edm.String" MaxLength="30" sap:label="Name 1" sap:quickinfo="Name"/><Property Name="StoreCity" Type="Edm.String" MaxLength="25" sap:label="City"/><Property Name="StoreState" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Region"
+					sap:quickinfo="Region (State, Province, County)"/><Property Name="StoreCountry" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="County code"
+					sap:quickinfo="County Code"/><Property Name="StoreDiv" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Core Divison NBR"/></EntityType>
+			<Association Name="assoc_320AF5D2A1E2E831938A49AA319A0DA8" sap:content-version="1"><End Type="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_C_SOS_REQUEST_FSC_TPType" Multiplicity="1"
+				Role="FromRole_assoc_320AF5D2A1E2E831938A49AA319A0DA8"/><End Type="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_I_SOS_REQUEST_FSC_TPType" Multiplicity="*"
+				Role="ToRole_assoc_320AF5D2A1E2E831938A49AA319A0DA8"/></Association>
+			<Association Name="assoc_27BA886FA7EB7E4884C14FE3DD47A8C8" sap:content-version="1"><End Type="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_C_SOS_REQUEST_FSC_TPType" Multiplicity="1"
+				Role="FromRole_assoc_27BA886FA7EB7E4884C14FE3DD47A8C8"/><End Type="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_I_SOS_FAVORITES_TPType" Multiplicity="*" Role="ToRole_assoc_27BA886FA7EB7E4884C14FE3DD47A8C8"/></Association>
+			<Association Name="assoc_7A728034473AB54A03EE77A32D90F7F6" sap:content-version="1"><End Type="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_C_SOS_REQUEST_FSC_TPType" Multiplicity="1"
+				Role="FromRole_assoc_7A728034473AB54A03EE77A32D90F7F6"/><End Type="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_I_SOS_CARTType" Multiplicity="*" Role="ToRole_assoc_7A728034473AB54A03EE77A32D90F7F6"/></Association>
+			<Association Name="assoc_6E7953DC111361A37ED53EFDD301F8D6" sap:content-version="1"><End Type="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_I_SOS_CARTType" Multiplicity="1" Role="FromRole_assoc_6E7953DC111361A37ED53EFDD301F8D6"/><End Type="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_I_SOS_SKU_STOREType" Multiplicity="*" Role="ToRole_assoc_6E7953DC111361A37ED53EFDD301F8D6"/></Association>
+			<EntityContainer Name="ZCDS_C_SOS_REQUEST_FSC_TP_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZCDS_C_SOS_REQUEST_FSC_TP" EntityType="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_C_SOS_REQUEST_FSC_TPType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCDS_I_SOS_CART" EntityType="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_I_SOS_CARTType" sap:content-version="1"/><EntitySet Name="ZCDS_I_SOS_FAVORITES_TP" EntityType="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_I_SOS_FAVORITES_TPType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCDS_I_SOS_REQUEST_FSC_TP" EntityType="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_I_SOS_REQUEST_FSC_TPType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCDS_I_SOS_SKU_STORE" EntityType="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_I_SOS_SKU_STOREType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+				<AssociationSet Name="assoc_27BA886FA7EB7E4884C14FE3DD47A8C8"
+					Association="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.assoc_27BA886FA7EB7E4884C14FE3DD47A8C8" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="ZCDS_C_SOS_REQUEST_FSC_TP" Role="FromRole_assoc_27BA886FA7EB7E4884C14FE3DD47A8C8"/><End EntitySet="ZCDS_I_SOS_FAVORITES_TP" Role="ToRole_assoc_27BA886FA7EB7E4884C14FE3DD47A8C8"/></AssociationSet>
+				<AssociationSet Name="assoc_320AF5D2A1E2E831938A49AA319A0DA8"
+					Association="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.assoc_320AF5D2A1E2E831938A49AA319A0DA8" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="ZCDS_C_SOS_REQUEST_FSC_TP" Role="FromRole_assoc_320AF5D2A1E2E831938A49AA319A0DA8"/><End EntitySet="ZCDS_I_SOS_REQUEST_FSC_TP" Role="ToRole_assoc_320AF5D2A1E2E831938A49AA319A0DA8"/></AssociationSet>
+				<AssociationSet Name="assoc_7A728034473AB54A03EE77A32D90F7F6"
+					Association="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.assoc_7A728034473AB54A03EE77A32D90F7F6" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="ZCDS_C_SOS_REQUEST_FSC_TP" Role="FromRole_assoc_7A728034473AB54A03EE77A32D90F7F6"/><End EntitySet="ZCDS_I_SOS_CART" Role="ToRole_assoc_7A728034473AB54A03EE77A32D90F7F6"/></AssociationSet>
+				<AssociationSet Name="assoc_6E7953DC111361A37ED53EFDD301F8D6"
+					Association="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.assoc_6E7953DC111361A37ED53EFDD301F8D6" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="ZCDS_I_SOS_CART" Role="FromRole_assoc_6E7953DC111361A37ED53EFDD301F8D6"/><End EntitySet="ZCDS_I_SOS_SKU_STORE" Role="ToRole_assoc_6E7953DC111361A37ED53EFDD301F8D6"/></AssociationSet>
+				<FunctionImport Name="ZCDS_I_SOS_CARTCheckout_sos" ReturnType="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_I_SOS_CARTType"
+					EntitySet="ZCDS_I_SOS_CART" m:HttpMethod="POST" sap:action-for="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_I_SOS_CARTType"
+					sap:applicable-path="Checkout_sos_ac"><Parameter Name="bname" Type="Edm.String" Mode="In" MaxLength="12"/><Parameter Name="cart_itm_no" Type="Edm.String" Mode="In" MaxLength="5"/><Parameter Name="matnr" Type="Edm.String" Mode="In" MaxLength="40"/><Parameter Name="werks" Type="Edm.String" Mode="In" MaxLength="4"/></FunctionImport>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZCDS_C_SOS_REQUEST_FSC_TP_CDS.ZCDS_I_SOS_CARTType/werks">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Store with respect to Article"/><PropertyValue Property="CollectionPath" String="ZCDS_I_SOS_SKU_STORE"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="bname"/><PropertyValue Property="ValueListProperty" String="SOSUser"/></Record>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="matnr"/><PropertyValue Property="ValueListProperty" String="SOSSKU"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="https://dldf20app00.irving.zalecorp.com:8001/sap/opu/odata/sap/ZCDS_C_SOS_REQUEST_FSC_TP_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="https://dldf20app00.irving.zalecorp.com:8001/sap/opu/odata/sap/ZCDS_C_SOS_REQUEST_FSC_TP_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

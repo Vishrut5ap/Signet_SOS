@@ -1,0 +1,204 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" 
+xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" 
+xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" displayBlock="true" 
+class="sapUiSizeCompact" controllerName="zsos.controller.App">
+	<App>
+		<pages>
+			<Page id="rootPage">
+				<customHeader>
+					<Bar id="bar1">
+						<!--class="hederHeight"-->
+						<contentMiddle>
+							<l:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:l="sap.ui.layout" width="100%" id="layout0_1544814242204">
+								<l:content>
+									<Text xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="{i18n>Header}" id="SOS" class="myCustomText" textAlign="Center"/>
+								</l:content>
+							</l:VerticalLayout>
+						</contentMiddle>
+						<contentLeft>
+							<Image xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" width="250px" height="100%" id="image0"/>
+							<!--class="image_padding"-->
+						</contentLeft>
+						<contentRight>
+							<l:VerticalLayout xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:l="sap.ui.layout" width="100%" id="layout0_1544814242204_copy">
+								<l:content>
+									<Text xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="loginUser" text="Logged in as" textAlign="Right" class="myTextLog"/>
+									<Text id="cartCount" text="{userDetailsModel>/userDetails/Cartitmcount}" class="cartCount" textAlign="Left"/>	
+								</l:content>
+							</l:VerticalLayout>
+						</contentRight>
+					</Bar>
+					<!--<Toolbar xmlns:mvc="sap.ui.core.mvc" 
+			    xmlns:core="sap.ui.core" 
+			    xmlns:l="sap.ui.layout" 
+			    xmlns:f="sap.ui.layout.form" 
+			    xmlns:uxap="sap.uxap" 
+			    xmlns:table="sap.ui.table" 
+			    xmlns:u="sap.ui.unified" 
+			    xmlns="sap.m" id="toolbar2" 
+			    height="97px" class="sapMPageHeader">
+			        <content>
+			            <l:HorizontalLayout id="layout0" class="sapMPageHeader">
+			                <l:content>
+			                    <Image xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns="sap.m" src="./image/Sig.png" width="240px" height="100px" id="image2_" backgroundPosition=""/>
+			                </l:content>
+			            </l:HorizontalLayout>
+			            <ToolbarSpacer id="spacer1" class="sapMPageHeader"/>
+			            <uxap:ObjectPageHeaderContent id="content1" class="sapMPageHeader">
+			                <uxap:content>
+			                    <l:VerticalLayout width="100%" id="layout0_1544446345397" class="align">
+			                        <l:content>
+			                            <Text xmlns="sap.m" text="{i18n>Header}" id="SOS" class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText" textAlign="Center" wrapping="false"/>
+			                            <Text xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" 
+			                            xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" 
+			                            xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" 
+			                            xmlns:u="sap.ui.unified" xmlns="sap.m" 
+			                            text="{i18n>Store} : XXXX" id="Store" 
+			                            textAlign="Center" class="myText" wrapping="false"/>
+			                        </l:content>
+			                    </l:VerticalLayout>
+			                    </uxap:content>
+			                
+			            </uxap:ObjectPageHeaderContent>
+			            <ToolbarSpacer id="spacer1_copy" class="sapMPageHeader"/>
+			            <uxap:ObjectPageHeaderContent id="content0" class="sapMPageHeader">
+			            <uxap:content>
+			                <l:VerticalLayout width="100%" id="layout1" class="align_right">
+			                    <l:content>
+			                        <Text xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns="sap.m" text="{i18n>Login} " id="Login" textAlign="Right"/>
+			                        <l:HorizontalLayout id="layout0_1544547074901">
+			                            <l:content>
+			                                <Label xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" width="100%" id="label6"/>
+			                                <Text xmlns:sap.ui.commons="sap.ui.commons" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns="sap.m" text="Logout" id="text5_copy3" textAlign="Right"/>
+			                            </l:content>
+			                        </l:HorizontalLayout>
+			                    </l:content>
+			                </l:VerticalLayout>
+			            </uxap:content>
+			            </uxap:ObjectPageHeaderContent>
+			            </content>
+			        
+			    </Toolbar>-->
+				</customHeader>
+				<subHeader>
+					<Bar id="bar0_1544796239581">
+						<contentMiddle>
+							<Text xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns="sap.m" id="Store" textAlign="Center" class="myText"/>
+						</contentMiddle>
+						<contentRight>
+							<l:HorizontalLayout xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:l="sap.ui.layout" id="layout0" allowWrapping="true">
+								<l:content>
+<!--<!<start of change for REQ0337378-->
+									<Text xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="Supply Order Calendar" id="calendar" class="myCalerdarText" textAlign="Center"/>
+									<core:Icon xmlns:core="sap.ui.core" src="sap-icon://calendar" size="1.5rem" id="icon1" hoverColor="orange" alt="Cart" tooltip="Supply Order Calendar" class="viewcart" press="handlePickday"/>
+<!--<!<End of change for REQ0337378-->									
+									<core:Icon xmlns:core="sap.ui.core" src="sap-icon://cart" size="1.5rem" id="icon0" hoverColor="orange" alt="Cart" tooltip="Cart" class="viewcart" press="handleCartItem"/>
+									<!--<Text xmlns:cd="http://schemas.sap.com/sapui5/"extension/sap.ui.core.CustomData/1" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"-->
+									<!--	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns="sap.m"-->
+									<!--	text="Logout" id="Store_copy2" textAlign="Right" class="myText"/>-->
+								</l:content>
+							</l:HorizontalLayout>
+						</contentRight>
+						<contentLeft>
+							<Image xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" width="250px" height="100%" id="image0_copy"/>
+							<!--class="image_padding"-->
+						</contentLeft>
+					</Bar>
+				</subHeader>
+				<content>
+					<IconTabBar id="topIconTabBar" expanded="true" select="handleIconTabBarSelect" applyContentPadding="false" stretchContentHeight="true">
+						<items>
+							<IconTabFilter id="home" text="{i18n>gettingStartedFilter}" key="home">
+								<!--<content>-->
+								<!--	<core:ComponentContainer width="100%" height="100%" name="zsos.home" component=zsos..home" propagateModel="true" componentCreated="onCompCreated"/>-->
+								<!--</content>-->
+							</IconTabFilter>
+							<IconTabFilter id="sosReq" text="{i18n>sosReq}" key="sosReq">
+								<!--<content>-->
+								<!--    <core:ComponentContainer width="100%" height="100%" name="zsos.sosservice" component=zsos...sosservice" propagateModel="true"/>-->
+								<!--</content>-->
+							</IconTabFilter>
+							<IconTabFilter id="report" text="{i18n>Report}" key="report"/>
+							<IconTabFilter id="admin" text="{i18n>Admin}" key="admin" visible="{userDetailsModel>/userDetails/IsAdmin}">
+								<content>
+									<IconTabBar id="adminTabBar" expanded="true" select="handleAdminTabSelect" applyContentPadding="false" stretchContentHeight="true">
+										<items>
+											<IconTabFilter id="user" text="{i18n>manageuser}" key="user">
+												<content>
+													<core:ComponentContainer id="userCont" usage="zsos.user" async="true" width="100%" height="100%"/>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter id="image" text="{i18n>uplImage}" key="image">
+												<content>
+													<core:ComponentContainer id="imageCont" usage="zsos.uploadimage" async="true" width="100%" height="100%"/>
+												</content>
+											</IconTabFilter>
+										</items>
+									</IconTabBar>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter id="cart" text="{i18n>Cart}" key="cart" class="viewcart">
+								<!--<content>-->
+								<!--    <core:ComponentContainer width="100%" height="100%" name="zsos..cart" componentzsos.s.cart" propagateModel="true"/>-->
+								<!--</content>-->
+							</IconTabFilter>
+							<!--<IconTabFilter id="cart" text="{i18n>Cart}" key="cart" class="viewcart"/>-->
+							<!--<IconTabFilter text="{i18n>Report}" id="filter0">-->
+							<!--    <content>-->
+							<!--        <MessageStrip xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" type="Information" showIcon="true" text="Here's a Form Layout inside an Icon Tab Bar …" id="strip1"/>-->
+							<!--        <f:SimpleForm xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:f="sap.ui.layout.form" id="simpleFormChange" title="Address" editable="true" class="editableForm">-->
+							<!--            <f:content>-->
+							<!--                <Label xmlns="sap.m" text="{i18n>layoutFormName}" id="label6_1544598964802"/>-->
+							<!--                <Input xmlns="sap.m" value="{address>/Name}" id="input7"/>-->
+							<!--                <Label xmlns="sap.m" text="{i18n>layoutFormStreet}" id="label7"/>-->
+							<!--                <Input xmlns="sap.m" value="{address>/Street}" id="input8"/>-->
+							<!--                <Label xmlns="sap.m" text="{i18n>layoutFormHouseNumber}" id="label8"/>-->
+							<!--                <Input xmlns="sap.m" value="{address>/HouseNumber}" id="input9"/>-->
+							<!--                <Label xmlns="sap.m" text="{i18n>layoutFormZIPCode}" id="label9"/>-->
+							<!--                <Input xmlns="sap.m" value="{address>/ZIPCode}" id="input10"/>-->
+							<!--                <Label xmlns="sap.m" text="{i18n>layoutFormCity}" id="label10"/>-->
+							<!--                <Input xmlns="sap.m" value="{address>/City}" id="input11"/>-->
+							<!--                <Label xmlns="sap.m" text="{i18n>layoutFormCountry}" id="label11"/>-->
+							<!--                <Select xmlns="sap.m" id="select1">-->
+							<!--                    <items>-->
+							<!--                        <core:Item xmlns:core="sap.ui.core" text="{i18n>layoutCountryGermany}" id="item3"/>-->
+							<!--                        <core:Item xmlns:core="sap.ui.core" text="{i18n>layoutCountryUSA}" id="item4"/>-->
+							<!--                        <core:Item xmlns:core="sap.ui.core" text="{i18n>layoutCountryEngland}" id="item5"/>-->
+							<!--                        </items>-->
+							<!--                </Select>-->
+							<!--                </f:content>-->
+							<!--        </f:SimpleForm>-->
+							<!--        <Toolbar xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="toolbar2_1544599085466">-->
+							<!--            <Button text="{i18n>layoutPublishButton}" type="Accept" icon="sap-icon://outbox"/>-->
+							<!--            <Button text="{i18n>layoutDraftButton}" icon="sap-icon://save"/>-->
+							<!--            </Toolbar>-->
+							<!--    </content>-->
+							<!--</IconTabFilter>-->
+							<!--<IconTabFilter text="{i18n>Admin}" id="filter0_1544214087359" class="viewcart">-->
+							<!--    <content>-->
+							<!--        <Carousel xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" id="carousel1">-->
+							<!--            <pages>-->
+							<!--                <Image src="https://warriortradingnews.com/wp-content/uploads/2018/06/dc33b5ba114f5e2f72860a92a7757585.png" height="400px" id="image2"/>-->
+							<!--                <Image src="https://media.defense.gov/2015/Jan/30/2001007935/-1/-1/0/190510-A-YG824-088.JPG" height="400px" id="image3"/>-->
+							<!--                </pages>-->
+							<!--        </Carousel>-->
+							<!--        <Button xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" text="Say Hello!" press="onShowHello" id="button3"/>-->
+							<!--        <Input xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.m" value="{helloPanel>/recipient/name}" description="Hello {helloPanel>/recipient/name}" valueLiveUpdate="true" width="60%" id="input6"/>-->
+							<!--    </content>-->
+							<!--</IconTabFilter>-->
+							<!--<IconTabFilter xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:uxap="sap.uxap" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified" xmlns="sap.m" text="View Cart" id="filter0_1544214087359_copy2"/>-->
+						</items>
+						<content>
+							<core:ComponentContainer id="homeCont" async="true" componentCreated="onHomeCompCreated" width="100%" height="100%" propagateModel="true"/>
+							<core:ComponentContainer visible="false" id="sosCont" async="true" componentCreated="onSosCompCreated" width="100%" height="100%" propagateModel="true"/>
+							<core:ComponentContainer visible="false" id="reportCont" async="true" componentCreated="onReportCompCreated" width="100%" height="100%" propagateModel="true"/>
+							<!--<core:ComponentContainer visible="false" id="adminCont" async="true" usage="zsos.admin" componentCreated="onAdminCompCreated" width="100%"-->
+							<!--	height="100%" propagateModel="true"/>-->
+							<core:ComponentContainer visible="false" id="cartCont" async="true" componentCreated="onCartCompCreated" width="100%" height="100%" propagateModel="true"/>
+						</content>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

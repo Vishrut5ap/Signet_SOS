@@ -1,0 +1,42 @@
+{
+	"fileName": "id_1545392328871_76_propertyChange",
+	"fileType": "change",
+	"changeType": "propertyChange",
+	"moduleName": "",
+	"reference": "zsos.sosservice2.Component",
+	"packageName": "$TMP",
+	"content": {
+		"property": "enableAutoBinding",
+		"newValue": true
+	},
+	"selector": {
+		"id": "zsos.sosservice2::sap.suite.ui.generic.template.ListReport.view.ListReport::ZCDS_I_SOS_REQUEST_TP--listReport",
+		"type": "sap.ui.comp.smarttable.SmartTable",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/zsos.sosservice2/changes/",
+	"projectId": "zsos.sosservice2",
+	"creation": "2018-12-21T11:38:59.646Z",
+	"originalLanguage": "EN",
+	"conditions": {},
+	"context": "",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.60.2",
+		"sourceChangeFileName": "",
+		"compositeCommand": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"validAppVersions": {
+		"creation": "1.0.0",
+		"from": "1.0.0",
+		"to": "1.0.0"
+	},
+	"jsOnly": false,
+	"variantReference": ""
+}

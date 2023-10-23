@@ -1,0 +1,239 @@
+{
+    "_version": "1.3.0",
+    "sap.app": {
+        "_version": "1.3.0",
+        "id": "sos",
+        "type": "application",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "crossNavigation": {
+            "inbounds": {}
+        },
+        "dataSources": {
+            "ZFIAP_SOS_FAV_CART_SRV": {
+                "uri": "/sap/opu/odata/sap/ZFIAP_SOS_FAV_CART_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "model/metadata.xml"
+                }
+            }
+        },
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponentForManifest",
+            "version": "0.0.0",
+            "toolsId": "d083e95e-efb4-4558-8d09-d8b467cb849b"
+        }
+    },
+    "sap.ui": {
+        "_version": "1.3.0",
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_bluecrystal",
+            "belize"
+        ]
+    },
+    "sap.ui5": {
+        "_version": "1.2.0",
+        "rootView": {
+            "viewName": "zsos.view.App",
+            "type": "XML",
+            "id": "app"      
+        },
+        "autoPrefixId": true,
+        "dependencies": {
+            "minUI5Version": "1.71.28",
+            "libs": {
+                "sap.m": {
+                    "minVersion": "1.34.0"
+                },
+                "sap.ui.core": {
+                    "minVersion": "1.34.0"
+                },
+                "sap.ui.layout": {
+                    "minVersion": "1.34.0"
+                },
+                "sap.uxap": {
+                    "minVersion": "1.52"
+                }
+            }
+        },
+        "routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "zsos.view",
+				"controlId": "App",
+				"controlAggregation": "pages",
+                "async": true
+			},
+			"routes": [
+				{
+					"pattern": "Login",
+					"name": "Login",
+					"target": "Login"
+				},
+				{
+					"pattern": "Home",
+					"name": "Home",
+					"target": "Home"
+				},
+				{
+					"pattern": "ForgotPass/{token}",
+					"name": "ForgotPass",
+					"target": "ForgotPass"
+				},
+				{
+					"pattern": "Admin",
+					"name": "Admin",
+					"target": "Admin"
+				},
+				{
+					"pattern": "Reports",
+					"name": "Reports",
+					"target": "Reports"
+				},
+				{
+					"pattern": "Register/{token}",
+					"name": "Register",
+					"target": "Register"
+				},
+				{
+					"pattern": "notifDetail/{notifDetailPath}",
+					"name": "notifDetail",
+					"target": "notifDetail"
+				}
+			],
+			"targets": {
+				"Login": {
+					"viewName": "Login"
+				},
+				"Home": {
+					"viewName": "App",
+					"transition": "flip"
+				},
+				"ForgotPass": {
+					"viewName": "ForgotPass"
+				},
+				"Admin": {
+					"viewName": "Admin"
+				},
+				"Register": {
+					"viewName": "Admin"
+				},
+				"Reports": {
+					"viewName": "Reports"
+				},
+				"notifDetail": {
+					"viewId": "notifDetail",
+					"viewName": "NotifDetail"
+				}
+			}
+		},
+        "componentUsages": {
+            "zsos.home": {
+                "name": "zsos.home",
+                "settings": {},
+                "componentData": {},
+                "manifest": true
+            },
+            "zsos.sosservice": {
+                "name": "zsos.sosservice",
+                "settings": {},
+                "componentData": {},
+                "manifest": true
+            },
+            "zsos.sosrequestfsc": {
+                "name": "zsos.sosrequestfsc",
+                "settings": {},
+                "componentData": {},
+                "manifest": true
+            },
+            "zsos.report": {
+                "name": "zsos.report",
+                "settings": {},
+                "componentData": {},
+                "manifest": true
+            },
+            "zsos.cart": {
+                "name": "zsos.cart",
+                "settings": {},
+                "componentData": {},
+                "manifest": true
+            },
+            "zsos.cartFSC": {
+                "name": "zsos.cartFSC",
+                "settings": {},
+                "componentData": {},
+                "manifest": true
+            },
+            "zsos.user": {
+                "name": "zsos.user",
+                "settings": {},
+                "componentData": {},
+                "manifest": true
+            },
+            "zsos.uploadimage": {
+                "name": "zsos.uploadimage",
+                "settings": {},
+                "componentData": {},
+                "manifest": true
+            }
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "zsos.i18n.i18n"
+                }
+            },
+            "": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "ZFIAP_SOS_FAV_CART_SRV",
+                "preload": true
+            },
+            "favCart": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "ZFIAP_SOS_FAV_CART_SRV",
+                "preload": true
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        }
+    },
+    "sap.platform.hcp": {
+        "uri": "webapp",
+        "_version": "1.1.0"
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/zfiap_sos_store/webapp",
+        "_version": "1.1.0"
+    }
+}

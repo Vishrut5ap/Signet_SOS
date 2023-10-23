@@ -1,0 +1,112 @@
+.myCustomText {
+   font-weight: bold;
+   font-size: 20px !important;
+   color: skyblue;
+}
+.myText {
+font-size: 15px !important;
+color: blue;
+text-align: center;
+}
+.myTextLog {
+font-size: 12px !important;
+}
+.cartCount {
+	padding-right: 2rem;
+	padding-top: 0.5rem;
+	font-size: 12px !important;
+}
+.viewcart {
+	padding-right: 1.5rem;
+	/*font-size: 1.5em !important;*/
+	padding-top:10px;
+}
+.cartSize {
+font-size: 1.7rem !important;
+padding-top: 0px;
+}
+/*.cartGap {*/
+/*top:7px;*/
+/*}*/
+.cartCountSize {
+font-size: 14px !important;	
+}
+.sapMITB .sapMITBItemNoCount.sapMITBFilter:last-child {
+    padding-left: 200px;
+    
+}
+
+.sapThemeText-asBackgroundColor{
+	background-color: #eff4f9;
+}
+.sapMPageHeader{
+    background-color : #eff4f9 ;
+   
+    padding:0;
+    
+   
+  } 
+  
+
+  
+.sapMIBar.sapMHeader-CTX {
+	background: #eff4f9;
+}  
+.align{
+	text-align: center;
+}
+.align_right{
+	text-align: right;
+}
+
+
+.maintainLandingPage {
+    width: 100%;
+    background-color: #eff4f9;
+    max-height: 100px;
+}
+
+.hederHeight{
+	height: 6rem;
+	
+}
+.sapMBarPH {
+   
+    line-height: 0;
+    padding-top: 0;
+}
+.sapMBar{
+	line-height: 0;
+	    padding-bottom: 0;
+}
+.sapUiSizeCompact .sapMPageHeader .sapMIBar .sapMBarLeft {
+	line-height: 0;
+	    padding-bottom: 0;
+}
+.sapUiSizeCompact .sapMBarLeft{
+	line-height: 0;
+}
+.sapUiSizeCompact .sapMBarRight{
+	line-height: 0;
+}
+.image_padding{
+	padding-top: 10px;
+}
+.filterExpandButton {
+	bottom:-25px !important;
+}
+.cartCountGap :nth-child(3){
+	top:1px;
+}
+.myCalerdarText {
+   font-size: 12px !important;
+   padding-right: 0.5rem;
+   color: blue;
+   text-align: center;
+}
+/*.hideEdit {*/
+/*display:none !important;*/
+/*height: 0px !important;*/
+/*height:800px !important;*/
+/*min-height:800px !important;*/
+/*}*/
